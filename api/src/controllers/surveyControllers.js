@@ -2,6 +2,26 @@ const { Survey, Language, HowFound } = require('../db');
 const { Op } = require('sequelize')
 const { sequelize } = require('../db')
 
+const getAllSurveys = async (req, res) => {
+    try {
+        const survs = await Survey.findAll({
+            include: [
+                {
+                    model: Language,
+                    attributes: ["name"],
+                    through: { attributes: [] }
+                }, {
+                    model: HowFound,
+                    attributes: ["name"],
+                    through: { attributes: [] }
+                }
+            ]
+        });
+        res.status(200).json(survs);  
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
 
 const getSurveyByName = async (req, res) => {
     const { name } = req.query;
@@ -98,5 +118,6 @@ const editSurvey = async (req, res) => {
 module.exports = {
     getSurveyByName,
     createSurvey,
-    editSurvey
+    editSurvey,
+    getAllSurveys
 }

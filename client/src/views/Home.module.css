@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.h1 {
+    font-style: italic;
+    font-size: 36px;
+    color: #4285f4;
+    margin-bottom: 20px;
+}
+
+

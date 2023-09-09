@@ -1,0 +1,31 @@
+.button {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.searchbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+.searchinput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+.searchbutton {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}

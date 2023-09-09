@@ -1,9 +1,10 @@
 const  { Router } = require('express');
 const {getLanguages, getHowFound} = require('../controllers/languagecontroller')
-const {getSurveyByName, createSurvey, editSurvey} = require('../controllers/surveyControllers')
+const {getSurveyByName, createSurvey, editSurvey, getAllSurveys} = require('../controllers/surveyControllers')
 
 const router = Router();
 
+router.get('/surveys', getAllSurveys);
 router.post('/survey/create', createSurvey);
 router.put('/survey/edit', editSurvey)
 router.get('/survey', getSurveyByName)
