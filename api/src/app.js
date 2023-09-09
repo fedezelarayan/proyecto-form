@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-/* const routes = require('./routes/main.routes.js'); */
+const routes = require('./routes/main-routes');
 
 require('./db.js');
 
@@ -22,6 +22,6 @@ server.use((req, res, next) => {
   next();
 });
 
-/* server.use('/', routes); */
+server.use('/', routes);
 
 module.exports = server;
